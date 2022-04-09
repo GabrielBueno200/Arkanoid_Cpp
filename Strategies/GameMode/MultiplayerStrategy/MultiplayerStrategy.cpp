@@ -38,12 +38,6 @@ void MultiplayerStrategy::UpdateGame(float deltaTime)
 						Ball::AddNewBallToGame(&game->balls, newBallVelocity, game->windowWidth, game->windowHeight);
 					}
 
-					/*if (++game->secondPlayerScore % scoreToCloneBall == 0)
-					{
-						Vector2 newBallVelocity = Vector2(-200.0f, -ball.velocity.y);
-						Ball::AddNewBallToGame(&game->balls, newBallVelocity, game->windowWidth, game->windowHeight);
-					}*/
-
 					UpdateScoreBoard();
 
 					ball.velocity.y *= -1;
@@ -56,7 +50,6 @@ void MultiplayerStrategy::UpdateGame(float deltaTime)
 			ball.CheckCollisionWithAnotherBall(&collidedBall);
 	}
 
-	// TO DO: verificar pq o update dá erro no for de cima
 	for (auto& ball : game->balls) ball.Update(deltaTime);
 }
 
