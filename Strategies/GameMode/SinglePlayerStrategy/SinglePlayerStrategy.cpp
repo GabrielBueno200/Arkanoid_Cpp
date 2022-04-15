@@ -43,7 +43,6 @@ void SinglePlayerStrategy::UpdateGame(float deltaTime)
 			ball.CheckCollisionWithAnotherBall(&collidedBall);
 	}
 
-	// TO DO: verificar pq o update dá erro no for de cima
 	for (auto& ball : game->balls) ball.Update(deltaTime); 
 }
 
